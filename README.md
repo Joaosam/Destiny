@@ -22,7 +22,7 @@
 
 A ideia desse projeto é consolidar a ideia de HTML, CSS e JS, fazendo com que o programa advinhe seu futuro respondendo as suas perguntas
 
-Live Preview: https://joaosam.github.io/Hubkut/
+Live Preview: https://joaosam.github.io/Destiny/
 
 ## :memo: Licença
 
