@@ -6,6 +6,8 @@
 
 :root {
   font-size: 62.5%;
+
+  --color-gray: hsl(0, 0%, 45%);
 }
 
 body {
@@ -65,7 +67,7 @@ button {
 }
 
 input {
-  color: hsl(0, 0%, 45%);
+  color: var(--color-gray);
 }
 
 input:focus {
@@ -78,6 +80,8 @@ button {
   color: white;
 
   transition: filter 0.3s;
+
+  margin-bottom: 3rem;
 }
 
 button:hover {
@@ -85,3 +89,51 @@ button:hover {
   cursor: pointer;
 }
 
+#containerAnswer {
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#question {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.7rem;
+
+  color: var(--color-gray);
+}
+
+/* ========== SWALL ========== */
+.swal-modal {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.swal-overlay--show-modal .swal-modal {
+  animation: showSweetAlert .500ms;
+}
+
+.swal-button {
+  background-color: blueviolet;
+
+  border-radius: 0.8rem;
+}
+
+.swal-button:not([disabled]):hover {
+  background-color: blueviolet;
+  filter: brightness(1.1);
+}
+
+.swal-icon--warning__body, 
+.swal-icon--warning__dot {
+  background-color: blueviolet;
+}
+
+.swal-icon--warning {
+  border-color: blueviolet;
+  -webkit-animation: none;
+  animation: none;
+}
