@@ -1,4 +1,5 @@
 let answerElement = document.querySelector('#answer')
+let containerAnswer = document.querySelector('#containerAnswer')
 
 const answers = [
   'Certeza!',
@@ -24,8 +25,8 @@ const answers = [
 ]
 
 function makeQuestion() {
-  let questionFormElement = document.querySelector('#questionForm').value
-  if (!questionFormElement) {
+  let questionFormElement = document.querySelector('#questionForm')
+  if (!questionFormElement.value) {
     swal({
       title: 'Digite uma pergunta',
       icon: 'warning',
@@ -34,9 +35,25 @@ function makeQuestion() {
     return
   }
 
+  // Printo o input na tela
   let questionElement = document.querySelector('#question')
-  questionElement.innerHTML = questionFormElement
+  questionElement.innerHTML = questionFormElement.value
 
+  // Printo a resposta na tela
   const randomNumber = Math.floor(Math.random() * answers.length)
   answerElement.innerHTML = answers[randomNumber]
+
+  // Limpa input
+  clearInput(questionFormElement)
+  // Limpa resposta
+  clearAnswer()
+}
+
+function clearInput(questionFormElement) {
+  setTimeout(() => (questionFormElement.value = ''), 3000)
+}
+
+function clearAnswer() {
+  containerAnswer.style.opacity = 1
+  setTimeout(() => (containerAnswer.style.opacity = 0), 3000)
 }
