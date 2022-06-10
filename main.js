@@ -1,5 +1,6 @@
 let answerElement = document.querySelector('#answer')
 let containerAnswer = document.querySelector('#containerAnswer')
+let button = document.querySelector('#button')
 
 const answers = [
   'Certeza!',
@@ -43,17 +44,23 @@ function makeQuestion() {
   const randomNumber = Math.floor(Math.random() * answers.length)
   answerElement.innerHTML = answers[randomNumber]
 
+  //Desabilita botão
+  button.setAttribute('disabled', true)
+
   // Limpa input
   clearInput(questionFormElement)
   // Limpa resposta
-  clearAnswer()
+  clearAnswerandDisabledButton()
 }
 
 function clearInput(questionFormElement) {
   setTimeout(() => (questionFormElement.value = ''), 3000)
 }
 
-function clearAnswer() {
+function clearAnswerandDisabledButton() {
   containerAnswer.style.opacity = 1
-  setTimeout(() => (containerAnswer.style.opacity = 0), 3000)
+  setTimeout(() => {
+    containerAnswer.style.opacity = 0
+    button.removeAttribute('disabled')
+  }, 3000)
 }
