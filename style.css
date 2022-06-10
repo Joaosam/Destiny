@@ -91,6 +91,7 @@ button:hover {
   cursor: pointer;
 }
 
+/* ========== ANSWERS ========== */
 #containerAnswer {
   color: white;
 
@@ -140,4 +141,17 @@ button:hover {
   border-color: blueviolet;
   -webkit-animation: none;
   animation: none;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 425px) {
+  .container {
+    top: 5%;
+    transform: translateY(5%);
+  }
+
+  .textContent p {
+    text-align: center;
+  }
 }
